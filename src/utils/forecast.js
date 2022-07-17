@@ -9,7 +9,7 @@ const forecast = (longitude, latitude, callback) => {
     } else if (body.error) {
       callback("Unable to find location");
     } else {
-      const message = `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degress out. There is a ${body.currently.precipProbability}% chance of rain.`;
+      const message = `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degress out. There is a ${body.currently.precipProbability}% chance of rain. The heighest and lowest temperature of the day is ${body.daily.data[0].temperatureHigh} and ${body.daily.data[0].temperatureLow} `;
       callback(undefined, message);
     }
   });
